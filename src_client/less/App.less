@@ -1,0 +1,105 @@
+@import '../semantic-ui-theme/site/globals/site.variables';
+
+/* Global overrides */
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+html {
+  //background-color: @primaryColor;
+}
+
+body {
+  height: 100vh;
+  //color: @secondaryColor;
+}
+
+/* Styles for the React app container */
+#app {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 240px auto;
+  grid-template-rows: 50px auto;
+  grid-template-areas:
+    'sidenav topnav'
+    'sidenav content';
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+/* Style page content */
+#content {
+  grid-area: content;
+  overflow-y: auto;
+  background-color: @offWhite;
+  padding: 40px;
+
+  h1,
+  h2 {
+    margin: 0;
+  }
+
+  .title {
+    font-weight: normal;
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-weight: normal;
+    font-size: 16px;
+    color: @textSecondaryColor;
+  }
+
+  .card {
+    background-color: @white;
+    box-shadow: rgba(0, 0, 0, 0.05) 2px 2px 4px;
+    border-radius: 8px;
+
+    h1 {
+      font-size: 22px;
+      font-weight: 500;
+      margin: 4px 0 0 4px;
+    }
+
+    .horizontal-rule {
+      width: 100%;
+      height: 1px;
+      margin-top: 6px;
+      background-color: @textSecondaryColor;
+    }
+  }
+}
+
+/* Style sidenav */
+#sidenav {
+  grid-area: sidenav;
+}
+
+#topnav {
+  grid-area: topnav;
+}
+
+/* OTHER */
+
+// Animation delays
+// Ex.
+//  delay-50-0      = animation-delay: 0ms
+//  delay-50-1      = animation-delay: 100ms
+//  delay-50-2      = animation-delay: 200ms
+//  delay-100-0      = animation-delay: 0ms
+//  delay-100-1      = animation-delay: 50ms
+//  delay-100-2      = animation-delay: 100ms
+each(range(50), {
+  .delay-20-@{value} {
+    animation-delay: (@value * 20ms) !important;
+  }
+
+  .delay-100-@{value} {
+    animation-delay: (@value * 100ms) !important;
+  }
+});

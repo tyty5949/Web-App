@@ -1,0 +1,25 @@
+version: 0.0
+os: linux
+files:
+  - source: aws/dev/nginx/http.conf
+    destination: /etc/nginx/conf.d
+  - source: aws/dev/nginx/status.conf
+    destination: /etc/nginx/conf.d
+  - source: src_server
+    destination: /var/node/
+  - source: .env
+    destination: /var/node
+  - source: package.json
+    destination: /var/node
+  - source: build
+    destination: /var/www/public
+hooks:
+  ApplicationStop:
+    - location: aws/dev/scripts/appstop.sh
+      runas: ec2-user
+  AfterInstall:
+    - location: aws/dev/scripts/afterinstall.sh
+      runas: ec2-user
+  ApplicationStart:
+    - location: aws/dev/scripts/appstart.sh
+      runas: ec2-user

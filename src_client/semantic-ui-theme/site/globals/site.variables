@@ -1,0 +1,41 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+/*-------------------
+        Page
+--------------------*/
+@pageBackground      : @primaryColor;
+@textColor           : @secondaryColor;
+@textSecondaryColor  : #96a1a5;
+
+
+/*-------------------
+   Custom Elements
+--------------------*/
+@navBorderColor      : #ebedf1;
+
+
+/*--------------
+   Form Input
+---------------*/
+
+/* Input Text Color */
+@inputColor: @textColor;
+@inputPlaceholderColor:       lighten(@inputColor, 65);
+@inputPlaceholderFocusColor:  lighten(@inputColor, 45);
+
+/*-------------------
+    Brand Colors
+--------------------*/
+@primaryColor        : #62acbe;
+@secondaryColor      : #343b3d;
+
+
+/*-------------------
+      Site Colors
+--------------------*/
+
+/*---   Neutrals  ---*/
+@white               : #ffffff;
+@offWhite            : #f5f5f5;

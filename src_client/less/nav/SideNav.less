@@ -1,0 +1,102 @@
+@import '../../semantic-ui-theme/site/globals/site.variables';
+
+/* Variables */
+@hoverBackgroundColor      : #fafafa;
+@selectedBackgroundColor   : #f3f3f3;
+
+/* Styles for the SideNav component */
+#sidenav {
+  border-right: solid @navBorderColor 2px;
+  background-color: @white;
+
+  /* Style the unordered list which holds all the nav sections */
+  ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Base styles for all sections of the nav */
+  .nav-section {
+    display: grid;
+    grid-template-columns: 22px 32px 10px auto 16px 26px;
+    grid-template-rows: 50px;
+    grid-template-areas: '. icon . text angle .';
+    justify-items: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    color: @textSecondaryColor;
+  }
+
+  /* Style for when mouse hovers over a nav section */
+  .nav-section:hover {
+    background-color: @hoverBackgroundColor;
+  }
+
+  /* Disable hover styling for NavHeader component */
+  .nav-header:hover {
+    background-color: @white;
+  }
+
+  /* Style the icon for each nav section */
+  .nav-icon {
+    grid-area: icon;
+    font-size: 18px;
+  }
+
+  /* Style the text for each nav section */
+  .nav-text {
+    grid-area: text;
+    justify-self: start;
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  /* Style when nav section is selected and on current route */
+  .selected .nav-section {
+    color: @primaryColor;
+    background-color: @selectedBackgroundColor;
+  }
+
+  /* Style for NavHeader component */
+  .nav-header {
+    grid-template-rows: 50px;
+
+    .nav-icon {
+      font-size: 22px;
+      color: @primaryColor;
+    }
+
+    .nav-text {
+      color: @textColor;
+      font-size: 16px;
+    }
+  }
+
+  /* Style for group NavGroup component */
+  .nav-group {
+    outline-style: none;
+    user-select: none;
+
+    .nav-group-angle {
+      grid-area: angle;
+    }
+  }
+
+  /* Style for when the NavGroup component is selected and on current route */
+  .nav-group-selected {
+    color: @textColor;
+
+    .nav-icon {
+      color: @primaryColor;
+    }
+
+    .nav-group-angle {
+      color: @primaryColor;
+    }
+  }
+
+  /* Style for individual items within the NavGroup component */
+  .nav-group-item {
+    grid-template-rows: 40px;
+  }
+}

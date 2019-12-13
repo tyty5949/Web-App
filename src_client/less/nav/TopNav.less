@@ -1,0 +1,25 @@
+@import '../../semantic-ui-theme/site/globals/site.variables';
+
+/* Styles for the TopNav component */
+#topnav {
+  display: grid;
+  grid-template-columns: 300px auto;
+  grid-template-rows: auto;
+  grid-template-areas: 'search-bar .';
+  justify-items: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  background-color: @white;
+  border-bottom: solid @navBorderColor 2px;
+
+  /* Styles for search bar */
+  .search-bar {
+    grid-area: search-bar;
+    padding-left: 28px;
+    justify-self: stretch; /* Search bar fills entire  */
+    font-size: 90%;
+
+    input {
+      border: none; /* Remove border from search bar input */
+    }
+  }
+}
